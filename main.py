@@ -1,4 +1,5 @@
 from init_adatok import init_rendszer
+from jegyfoglalas import JegyFoglalas
 
 def menu():
     print("\n--- Repülőjegy Foglalási Rendszer ---")
@@ -14,39 +15,54 @@ def main():
     while True:
         menu()
         valasz = input("Választás: ")
+
         if valasz == "1":
-            for j in legitarsasag.listaz_jaratok():
-                print(j)
+            print("\nElérhető járatok:")
+            for jarat_info in legitarsasag.listaz_jaratokat():
+                print(jarat_info)
+
         elif valasz == "2":
-            nev = input("Utas neve: ")
-            jaratszam = input("Járatszám: ")
+            nev = input("Add meg az utas nevét: ")
+            jaratszam = input("Add meg a járatszámot: ")
             jarat = legitarsasag.keres_jarat(jaratszam)
+
             if jarat:
-                foglalasok.append(JegyFoglalas(nev, jarat))
-                print(f"Foglalás rögzítve. Ár: {jarat.jegyar} Ft")
+                foglalas = JegyFoglalas(nev, jarat)
+                foglalasok.append(foglalas)
+                print(f"Sikeres foglalás! Ár: {jarat.jegyar} Ft")
             else:
-                print("Nincs ilyen járatszám.")
+                print("Hibás járatszám!")
+
         elif valasz == "3":
-            nev = input("Utas neve: ")
-            jaratszam = input("Járatszám: ")
-            talalat = None
+            nev = input("Add meg az utas nevét: ")
+            jaratszam = input("Add meg a járatszámot: ")
+
+            torlendo = None
             for f in foglalasok:
                 if f.utas_nev == nev and f.jarat.jaratszam == jaratszam:
-                    talalat = f
+                    torlendo = f
                     break
-            if talalat:
-                foglalasok.remove(talalat)
+
+            if torlendo:
+                foglalasok.remove(torlendo)
                 print("Foglalás törölve.")
             else:
                 print("Nem található ilyen foglalás.")
+
         elif valasz == "4":
-            for f in foglalasok:
-                print(f.info())
+            if foglalasok:
+                print("\nAktuális foglalások:")
+                for f in foglalasok:
+                    print(f.info())
+            else:
+                print("Nincs egyetlen foglalás sem.")
+
         elif valasz == "0":
             print("Kilépés...")
             break
+
         else:
-            print("Érvénytelen választás.")
+            print("Érvénytelen választás. Próbáld újra.")
 
 if __name__ == "__main__":
     main()

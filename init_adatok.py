@@ -1,9 +1,9 @@
 from jarat import BelfoldiJarat, NemzetkoziJarat
-from legitarsasag import Legitarsasag
-from foglalas import JegyFoglalas
+from legitarsasag import LegiTarsasag
+from jegyfoglalas import JegyFoglalas
 
 def init_rendszer():
-    legitarsasag = Legitarsasag("PythonAir")
+    legitarsasag = LegiTarsasag("PythonAir")
 
     j1 = BelfoldiJarat("B101", "Budapest")
     j2 = BelfoldiJarat("B102", "Debrecen")
