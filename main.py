@@ -2,7 +2,7 @@ from init_adatok import init_rendszer
 from jegyfoglalas import JegyFoglalas
 
 def menu():
-    print("\n--- GDE-air Repülőjegy Foglalási Rendszer ---")
+    print("\n--- GDE - air Repülőjegy Foglalási Rendszer ---")
     print("1. Járatok listázása")
     print("2. Jegy foglalása")
     print("3. Foglalás lemondása")
