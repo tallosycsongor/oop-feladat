@@ -15,11 +15,11 @@ class BelfoldiJarat(Jarat):
         super().__init__(jaratszam, celallomas, 10000)
 
     def info(self):
-        return f"Belföldi: {self.jaratszam} -> {self.celallomas} | Ár: {self.jegyar} Ft"
+        return f"Belföldi járat {self.jaratszam} → {self.celallomas}, Ár: {self.jegyar} Ft"
 
 class NemzetkoziJarat(Jarat):
     def __init__(self, jaratszam, celallomas):
         super().__init__(jaratszam, celallomas, 30000)
 
     def info(self):
-        return f"Nemzetközi: {self.jaratszam} -> {self.celallomas} | Ár: {self.jegyar} Ft"
+        return f"Nemzetközi járat {self.jaratszam} → {self.celallomas}, Ár: {self.jegyar} Ft"
