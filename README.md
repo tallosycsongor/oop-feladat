@@ -41,3 +41,4 @@ Felhasználói interfész
 
 Előkészítés
 A rendszer indulásakor egy légitársaság, 3 járat és 6 foglalás előre be van töltve a rendszerbe, így a felhasználó azonnal használatba veheti a rendszert.
+
