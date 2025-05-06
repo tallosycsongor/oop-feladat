@@ -2,7 +2,7 @@
 repulojegy_foglalas/
 ├── adatok.txt              # Nevem, szakom, Neptun-kódom
 ├── main.py                 # A program indítása
-├── belfoldijarat.py                # Járat osztályok
+├── belfoldijarat.py        # Járat osztályok
 ├── legitarsasag.py         # LégiTársaság osztály
-├── foglalas.py             # JegyFoglalás osztály
+├── jegyfoglalas.py         # JegyFoglalás osztály
 └── init_adatok.py          # Előre betöltött adatok
